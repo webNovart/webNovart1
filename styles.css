@@ -1,6 +1,4 @@
-/* === webNovart Modern Redesign === */
-
-/* Reset & base */
+/* ==== RESET Y BASE ==== */
 *,
 *::before,
 *::after {
@@ -8,45 +6,42 @@
   padding: 0;
   box-sizing: border-box;
 }
-
 html {
   scroll-behavior: smooth;
 }
-
 body {
   font-family: 'Montserrat', Arial, sans-serif;
   background: linear-gradient(120deg, #e0e7ff 0%, #ffe7d6 100%);
   color: #222;
   min-height: 100vh;
-  line-height: 1.6;
+  line-height: 1.7;
 }
 
-/* Header and Navigation */
+/* ==== HEADER Y NAV ==== */
 header.header {
   background: #fff;
   box-shadow: 0 4px 24px #e0e7ff50;
-  border-radius: 0 0 16px 16px;
+  border-radius: 0 0 18px 18px;
   padding-bottom: 10px;
+  margin-bottom: 32px;
 }
-
 .logo-container {
   text-align: center;
-  padding: 28px 0 6px 0;
+  padding: 32px 0 8px 0;
 }
 .logo-main {
   width: 140px;
-  filter: drop-shadow(0 2px 12px #0002);
+  filter: drop-shadow(0 2px 14px #0001);
 }
 .lema {
   text-align: center;
   font-size: 1.15rem;
   color: #2d3a7b;
-  margin-bottom: 10px;
+  margin-bottom: 12px;
   letter-spacing: 1px;
   font-weight: 500;
   opacity: 0.92;
 }
-
 nav ul {
   display: flex;
   justify-content: center;
@@ -54,7 +49,6 @@ nav ul {
   gap: 18px;
   padding: 12px 0;
 }
-
 nav li {
   list-style: none;
 }
@@ -66,6 +60,7 @@ nav li a {
   color: #2d3a7b;
   background: #f3f7fa;
   transition: background 0.2s, color 0.2s, box-shadow 0.2s;
+  text-decoration: none;
 }
 nav li a.active,
 nav li a:hover {
@@ -74,7 +69,7 @@ nav li a:hover {
   box-shadow: 0 3px 12px #2f80ed22;
 }
 
-/* Hero Section */
+/* ==== HERO ==== */
 .hero {
   display: flex;
   flex-wrap: wrap;
@@ -85,13 +80,13 @@ nav li a:hover {
   background: linear-gradient(100deg, #fff 68%, #e0e7ff 100%);
   border-radius: 0 0 32px 32px;
   box-shadow: 0 6px 32px #2d3a7b13;
+  margin-bottom: 38px;
 }
-
 .hero-content {
   max-width: 480px;
 }
 .hero-content h1 {
-  font-size: 2.5rem;
+  font-size: 2.4rem;
   font-weight: 900;
   color: #2d3a7b;
   margin-bottom: 12px;
@@ -117,6 +112,8 @@ nav li a:hover {
   box-shadow: 0 4px 20px #ff6a0055;
   transition: background 0.2s, box-shadow 0.2s;
   cursor: pointer;
+  text-decoration: none;
+  margin-top: 10px;
 }
 .btn-primary:hover {
   background: linear-gradient(90deg, #2f80ed 0%, #ff6a00 100%);
@@ -125,14 +122,9 @@ nav li a:hover {
 .pulse {
   animation: pulse 1.3s infinite alternate;
 }
-
 @keyframes pulse {
-  to {
-    box-shadow: 0 0 30px #ff6a00cc;
-  }
+  to { box-shadow: 0 0 30px #ff6a00cc; }
 }
-
-/* Hero image */
 .hero-img img,
 .animated-graphic {
   width: 250px;
@@ -145,7 +137,15 @@ nav li a:hover {
   50% { transform: translateY(-18px);}
 }
 
-/* Section Titles */
+/* ==== SECCIONES GENERALES ==== */
+section {
+  max-width: 1100px;
+  margin: 32px auto;
+  background: #fff;
+  border-radius: 24px;
+  box-shadow: 0 2px 18px #2f80ed18;
+  padding: 32px 18px 32px 18px;
+}
 .section-title {
   font-size: 2rem;
   color: #ff6a00;
@@ -156,24 +156,14 @@ nav li a:hover {
   letter-spacing: .5px;
 }
 
-/* Services */
-.services {
-  max-width: 1200px;
-  margin: 48px auto 0 auto;
-  background: #fff;
-  border-radius: 24px;
-  padding: 38px 16px 42px 16px;
-  box-shadow: 0 2px 18px #2f80ed18;
-}
-
-.services-grid {
+/* ==== CARDS Y GRIDS ==== */
+.services-grid, .portfolio-grid, .plans-grid, .graphic-services, .interactive-row {
   display: flex;
   flex-wrap: wrap;
   gap: 36px;
   justify-content: center;
 }
-
-.service-card {
+.service-card, .graphic-card, .portfolio-item, .plan-card, .immersive-item {
   background: linear-gradient(120deg, #f9f9fa 70%, #e7f0ff 100%);
   border-radius: 22px;
   box-shadow: 0 2px 16px #ff6a0022;
@@ -183,83 +173,54 @@ nav li a:hover {
   text-align: center;
   transition: transform .22s, box-shadow .22s, background 0.2s;
 }
-.service-card img {
+.service-card img, .graphic-card img, .portfolio-item img, .immersive-item img {
   width: 58px;
   margin-bottom: 18px;
 }
-.service-card h3 {
+.service-card h3, .graphic-card h3, .portfolio-item h3, .plan-card h2, .immersive-item span {
   color: #2d3a7b;
   font-size: 1.13rem;
   margin-bottom: 6px;
 }
-.service-card p {
+.service-card p, .graphic-card p, .portfolio-item p, .plan-card ul, .immersive-item p {
   font-size: 1.01rem;
   color: #444;
 }
-.service-card:hover {
+.service-card:hover, .graphic-card:hover, .portfolio-item:hover, .plan-card:hover, .immersive-item:hover {
   transform: translateY(-8px) scale(1.04);
   box-shadow: 0 8px 32px #ff6a0030;
   background: linear-gradient(120deg, #fffbe6 70%, #e7f0ff 100%);
 }
 
-/* Immersive Experience */
-.immersive-experience {
-  max-width: 1150px;
-  margin: 50px auto 0 auto;
-  border-radius: 24px;
-  background: #f7f8fa;
-  box-shadow: 0 2px 16px #2f80ed12;
-  padding: 32px 14px;
-  text-align: center;
+/* ==== PLANES ==== */
+.plan-card {
+  min-width: 230px;
+  max-width: 300px;
+  padding: 28px 20px 18px 20px;
+  border: 2px solid #2f80ed22;
 }
-.immersive-experience p {
-  color: #444;
-  margin-bottom: 28px;
-}
-.interactive-row {
-  display: flex;
-  justify-content: center;
-  gap: 34px;
-  margin-top: 14px;
-  flex-wrap: wrap;
-}
-.immersive-item {
-  background: #fff;
-  border-radius: 18px;
-  box-shadow: 0 2px 12px #2f80ed15;
-  padding: 20px 28px;
-  min-width: 160px;
-  transition: transform .18s, box-shadow .2s;
-  display: flex;
-  flex-direction: column;
-  align-items: center;
-}
-.immersive-item img {
-  width: 40px;
+.plan-card.plan-basic { border-color: #e0e7ff; }
+.plan-card.plan-business { border-color: #ff6a00; }
+.plan-card.plan-pro { border-color: #2f80ed; }
+.plan-card h2 {
+  font-size: 1.25rem;
+  font-weight: 900;
   margin-bottom: 10px;
 }
-.immersive-item span {
-  font-size: 1.01rem;
-  color: #2d3a7b;
+.plan-card ul {
+  text-align: left;
+  margin-bottom: 14px;
+  padding-left: 0;
 }
-.immersive-item:hover {
-  transform: scale(1.07) rotate(-2deg);
-  box-shadow: 0 8px 32px #2f80ed25;
+.plan-card ul li {
+  list-style: disc inside;
+  margin-bottom: 6px;
 }
-
-/* CTA Banner */
-.cta-banner {
-  text-align: center;
-  margin: 54px auto 0 auto;
-  background: linear-gradient(90deg, #ff6a0030 0%, #2f80ed30 100%);
-  border-radius: 22px;
-  padding: 30px 18px 38px 18px;
-}
-.cta-banner h2 {
-  color: #2d3a7b;
-  font-size: 1.37rem;
+.plan-price {
+  font-size: 1.4rem;
+  color: #ff6a00;
   font-weight: 700;
-  margin-bottom: 18px;
+  margin-bottom: 10px;
 }
 .btn-secondary {
   padding: 11px 30px;
@@ -270,19 +231,71 @@ nav li a:hover {
   font-weight: 700;
   transition: background 0.2s, color 0.2s;
   cursor: pointer;
+  text-decoration: none;
 }
 .btn-secondary:hover {
   background: #2f80ed;
   color: #fff;
 }
 
-/* Footer */
+/* ==== FAQ ==== */
+.faq-list { margin-top: 24px; }
+.faq-item {
+  margin-bottom: 18px;
+  padding: 18px;
+  border-radius: 12px;
+  background: #fafcff;
+  box-shadow: 0 2px 10px #2f80ed18;
+  transition: box-shadow .18s;
+  cursor: pointer;
+}
+.faq-item:hover { box-shadow: 0 4px 16px #2f80ed33; }
+.faq-item h3 {
+  color: #2f80ed;
+  margin-bottom: 6px;
+  font-size: 1.1rem;
+}
+
+/* ==== CONTACTO ==== */
+.contact-form {
+  max-width: 420px;
+  margin: 0 auto;
+  display: flex;
+  flex-direction: column;
+  gap: 12px;
+}
+.contact-form label { font-weight: 600; color: #2f80ed; }
+.contact-form input, .contact-form textarea {
+  padding: 10px;
+  border-radius: 8px;
+  border: 1px solid #2f80ed77;
+  font-size: 1.04rem;
+  resize: none;
+}
+.contact-form input:focus, .contact-form textarea:focus { outline: 2px solid #ff6a00; }
+.contact-methods {
+  display: flex;
+  gap: 12px;
+  justify-content: center;
+  margin: 8px 0;
+}
+.btn-wsp { background: #25d366; color: #fff; }
+.btn-ig { background: linear-gradient(90deg,#fd5,#c13584,#e1306c,#833ab4); color: #fff; }
+.btn-mail { background: #2f80ed; color: #fff; }
+.form-success {
+  margin: 7px 0;
+  color: #2f80ed;
+  font-weight: 700;
+  display: none;
+}
+
+/* ==== FOOTER ==== */
 footer {
   margin-top: 64px;
   background: #fff;
   border-radius: 24px 24px 0 0;
   box-shadow: 0 -2px 24px #2f80ed16;
-  padding: 0 0 0 0;
+  padding: 0;
 }
 .footer-grid {
   display: flex;
@@ -326,7 +339,7 @@ footer {
   margin-top: 0;
 }
 
-/* Floating Bubbles */
+/* ==== BURBUJAS flotantes ==== */
 .bubble {
   position: fixed;
   width: 46px;
@@ -352,9 +365,9 @@ footer {
   box-shadow: 0 6px 24px #2f80ed55;
 }
 
-/* Responsive Design */
+/* ==== RESPONSIVE ==== */
 @media (max-width: 1100px) {
-  .services-grid, .footer-grid, .interactive-row {
+  .services-grid, .portfolio-grid, .plans-grid, .graphic-services, .footer-grid, .interactive-row {
     flex-wrap: wrap;
     gap: 20px;
   }
@@ -389,7 +402,7 @@ footer {
   .section-title {
     font-size: 1.3rem;
   }
-  .services, .immersive-experience, .cta-banner {
+  section {
     padding: 15px 4px 20px 4px;
     margin: 20px 2px 0 2px;
   }
