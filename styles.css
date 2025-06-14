@@ -893,4 +893,223 @@ footer {
         </div>
       </div>
     </div>
-    
+    /* ===== DISEÑO GRÁFICO NUEVO DISEÑO ===== */
+.graphic-design-main {
+  max-width: 1150px;
+  margin: 48px auto 48px auto;
+  background: linear-gradient(120deg, #fff 70%, #e0e7ff 100%);
+  border-radius: 38px;
+  box-shadow: 0 6px 40px #2f80ed18;
+  padding: 54px 24px 42px 24px;
+  position: relative;
+  overflow: hidden;
+}
+.graphic-design-main .section-title {
+  text-align: center;
+  font-size: 2.2rem;
+  color: #2f80ed;
+  font-weight: 900;
+  margin-bottom: 32px;
+  letter-spacing: .7px;
+}
+.graphic-design-flex {
+  display: flex;
+  gap: 60px;
+  justify-content: space-between;
+  align-items: stretch;
+  flex-wrap: wrap;
+  margin-bottom: 34px;
+}
+
+.graphic-design-benefits {
+  background: linear-gradient(120deg, #e0e7ff 90%, #fff 100%);
+  border-radius: 22px;
+  box-shadow: 0 2px 22px #2f80ed11;
+  padding: 38px 34px 32px 34px;
+  max-width: 420px;
+  min-width: 260px;
+  flex: 1 1 320px;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  transition: box-shadow .18s, transform .13s;
+  border-left: 8px solid #ff6a00;
+}
+.graphic-design-benefits h2 {
+  color: #ff6a00;
+  margin-bottom: 18px;
+  font-size: 1.25rem;
+  font-weight: 900;
+  letter-spacing: .2px;
+}
+.graphic-design-benefits ul {
+  margin-bottom: 16px;
+  padding-left: 14px;
+}
+.graphic-design-benefits li {
+  color: #2d3a7b;
+  margin-bottom: 13px;
+  font-size: 1.08rem;
+  border-left: 3px solid #2f80ed55;
+  padding-left: 10px;
+  border-radius: 4px;
+  background: #fff;
+  line-height: 1.7;
+  transition: background .2s;
+}
+.graphic-design-benefits li b {
+  color: #ff6a00;
+}
+.graphic-design-benefits li:hover {
+  background: #e0e7ff44;
+}
+.graphic-design-benefits .btn-primary {
+  align-self: flex-start;
+  margin-top: 5px;
+  font-size: 1.08rem;
+}
+
+.graphic-design-showcase {
+  display: flex;
+  flex-direction: column;
+  gap: 24px;
+  justify-content: center;
+  align-items: center;
+  flex: 1 1 340px;
+  min-width: 220px;
+}
+.graphic-design-showcase img {
+  width: 260px;
+  height: 170px;
+  object-fit: cover;
+  border-radius: 20px;
+  background: #fff;
+  box-shadow: 0 2px 18px #2f80ed22;
+  transition: transform .19s, box-shadow .18s;
+  border: 3px solid #e0e7ff;
+}
+.graphic-design-showcase img:hover {
+  transform: scale(1.06) rotate(-2deg);
+  box-shadow: 0 8px 28px #2f80ed33;
+  border-color: #ff6a00;
+}
+
+.graphic-design-main > p {
+  text-align: center;
+  margin-top: 28px;
+  font-weight: 800;
+  color: #2f80ed;
+  font-size: 1.20rem;
+  letter-spacing: .1px;
+}
+
+/* Responsive */
+@media (max-width: 1100px) {
+  .graphic-design-flex {
+    flex-direction: column;
+    align-items: center;
+    gap: 30px;
+  }
+  .graphic-design-benefits,
+  .graphic-design-showcase {
+    max-width: 98vw;
+  }
+  .graphic-design-showcase img {
+    width: 90vw;
+    max-width: 340px;
+  }
+}
+@media (max-width: 600px) {
+  .graphic-design-main {
+    padding: 17px 3vw 12px 3vw;
+    border-radius: 19px;
+  }
+  .graphic-design-benefits {
+    padding: 18px 10px 15px 10px;
+    border-left: 4px solid #ff6a00;
+    min-width: 0;
+  }
+  .graphic-design-showcase img {
+    width: 90vw;
+    min-width: 0;
+    max-width: 97vw;
+    height: 26vw;
+    min-height: 90px;
+  }
+}
+.flip-card {
+  width: 150px;
+  height: 120px;
+  perspective: 800px;
+  cursor: pointer;
+}
+.flip-card-inner {
+  position: relative;
+  width: 100%;
+  height: 100%;
+  transition: transform .7s cubic-bezier(.4,2.3,.3,1);
+  transform-style: preserve-3d;
+}
+.flip-card.flipped .flip-card-inner {
+  transform: rotateY(180deg);
+}
+.flip-card-front,
+.flip-card-back {
+  position: absolute;
+  width: 100%;
+  height: 100%;
+  backface-visibility: hidden;
+  border-radius: 13px;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+  background: #e0e7ff;
+}
+.flip-card-front {
+  color: #2f80ed;
+}
+.flip-card-back {
+  transform: rotateY(180deg);
+  background: #ffecd6;
+  color: #2d3a7b;
+}
+.flip-card-back strong {
+  display: block;
+  margin-top: 7px;
+  color: #ff6a00;
+}
+body.dark-mode {
+  background: #181c24 !important;
+  color: #f4f4f4 !important;
+}
+body.dark-mode .about,
+body.dark-mode .mobile-optimized,
+body.dark-mode .immersive-experience,
+body.dark-mode section,
+body.dark-mode .timeline-container,
+body.dark-mode .benefits-section,
+body.dark-mode .immersive-item,
+body.dark-mode .graphic-design-main {
+  background: #232734 !important;
+  color: #f4f4f4 !important;
+  box-shadow: 0 2px 18px #0008 !important;
+}
+body.dark-mode .section-title,
+body.dark-mode .about h1,
+body.dark-mode .timeline-date,
+body.dark-mode .benefits-section h2,
+body.dark-mode .immersive-item span,
+body.dark-mode .graphic-design-benefits h2 {
+  color: #7cbcff !important;
+}
+body.dark-mode .timeline-dot {
+  background: linear-gradient(90deg, #ffb86c 0%, #2f80ed 100%) !important;
+}
+body.dark-mode .phone-frame {
+  border-color: #7cbcff !important;
+}
+body.dark-mode .btn-primary,
+body.dark-mode .btn-secondary {
+  filter: brightness(1.1);
+}
