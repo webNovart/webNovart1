@@ -72,26 +72,82 @@ if(heroImg) {
         heroImg.style.transform = '';
     });
 }
-// Dibujo en canvas
-const canvas = document.getElementById('draw-canvas');
-if (canvas) {
-  const ctx = canvas.getContext('2d');
-  let drawing = false;
-  canvas.addEventListener('mousedown', e => { drawing = true; ctx.beginPath(); });
-  canvas.addEventListener('mouseup', e => { drawing = false; });
-  canvas.addEventListener('mouseout', e => { drawing = false; });
-  canvas.addEventListener('mousemove', function(e) {
-    if (!drawing) return;
-    const rect = canvas.getBoundingClientRect();
-    ctx.lineWidth = 2.5;
-    ctx.lineCap = 'round';
-    ctx.strokeStyle = '#2f80ed';
-    ctx.lineTo(e.clientX - rect.left, e.clientY - rect.top);
-    ctx.stroke();
-    ctx.beginPath();
-    ctx.moveTo(e.clientX - rect.left, e.clientY - rect.top);
-  });
-}
+// Dibujo en canvas para mouse y touch
+document.addEventListener("DOMContentLoaded", function() {
+  const canvas = document.getElementById('draw-canvas');
+  if (canvas) {
+    const ctx = canvas.getContext('2d');
+    let drawing = false;
+
+    // Funciones utilitarias para obtener posición relativa
+    function getPos(e) {
+      const rect = canvas.getBoundingClientRect();
+      if (e.touches && e.touches[0]) {
+        return {
+          x: e.touches[0].clientX - rect.left,
+          y: e.touches[0].clientY - rect.top
+        };
+      } else {
+        return {
+          x: e.clientX - rect.left,
+          y: e.clientY - rect.top
+        };
+      }
+    }
+
+    // Mouse events
+    canvas.addEventListener('mousedown', (e) => {
+      drawing = true;
+      ctx.beginPath();
+      const {x, y} = getPos(e);
+      ctx.moveTo(x, y);
+    });
+    canvas.addEventListener('mouseup', () => { drawing = false; ctx.beginPath(); });
+    canvas.addEventListener('mouseout', () => { drawing = false; ctx.beginPath(); });
+    canvas.addEventListener('mousemove', (e) => {
+      if (!drawing) return;
+      const {x, y} = getPos(e);
+      ctx.lineWidth = 2.5;
+      ctx.lineCap = 'round';
+      ctx.strokeStyle = '#2f80ed';
+      ctx.lineTo(x, y);
+      ctx.stroke();
+      ctx.beginPath();
+      ctx.moveTo(x, y);
+    });
+
+    // Touch events
+    canvas.addEventListener('touchstart', (e) => {
+      e.preventDefault();
+      drawing = true;
+      ctx.beginPath();
+      const {x, y} = getPos(e);
+      ctx.moveTo(x, y);
+    }, {passive: false});
+    canvas.addEventListener('touchend', (e) => {
+      e.preventDefault();
+      drawing = false;
+      ctx.beginPath();
+    }, {passive: false});
+    canvas.addEventListener('touchcancel', (e) => {
+      e.preventDefault();
+      drawing = false;
+      ctx.beginPath();
+    }, {passive: false});
+    canvas.addEventListener('touchmove', (e) => {
+      e.preventDefault();
+      if (!drawing) return;
+      const {x, y} = getPos(e);
+      ctx.lineWidth = 2.5;
+      ctx.lineCap = 'round';
+      ctx.strokeStyle = '#2f80ed';
+      ctx.lineTo(x, y);
+      ctx.stroke();
+      ctx.beginPath();
+      ctx.moveTo(x, y);
+    }, {passive: false});
+  }
+});
 
 // Cambio de tema
 const themeBtn = document.getElementById('theme-btn');
