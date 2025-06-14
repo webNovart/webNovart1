@@ -772,3 +772,125 @@ footer {
     padding: 7px 0;
   }
 }
+.mobile-optimized {
+  max-width: 1100px;
+  margin: 40px auto 32px auto;
+  background: linear-gradient(100deg,#fff 60%, #e0e7ff 100%);
+  border-radius: 28px;
+  box-shadow: 0 6px 32px #2d3a7b13;
+  padding: 38px 24px;
+}
+.mobile-optimized-content {
+  display: flex;
+  align-items: center;
+  gap: 48px;
+  flex-wrap: wrap;
+  justify-content: center;
+}
+.mobile-text {
+  max-width: 440px;
+}
+.mobile-text h2 {
+  font-size: 2rem;
+  color: #2f80ed;
+  margin-bottom: 18px;
+  font-weight: 900;
+}
+.mobile-text .emoji { font-size: 2.2rem; vertical-align: -10px; }
+.mobile-text .check {
+  color: #25d366;
+  font-size: 1.15em;
+  margin-right: 7px;
+}
+.mobile-text p {
+  font-size: 1.12rem;
+  color: #333;
+  line-height: 1.7;
+}
+.mobile-mockup {
+  position: relative;
+  width: 270px;
+  height: 540px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+.phone-frame {
+  width: 250px;
+  height: 500px;
+  border-radius: 38px;
+  border: 8px solid #2f80ed;
+  background: #222;
+  box-shadow: 0 6px 40px #2f80ed33;
+  overflow: hidden;
+  position: relative;
+}
+.phone-frame iframe {
+  width: 100%;
+  height: 100%;
+  border: none;
+  border-radius: 30px;
+  background: #fff;
+  pointer-events: none;
+  transform: scale(1.01);
+}
+.phone-glow {
+  position: absolute;
+  z-index: -1;
+  width: 255px;
+  height: 510px;
+  left: 0;
+  top: 0;
+  border-radius: 40px;
+  box-shadow: 0 0 40px 12px #2f80ed55, 0 0 20px 6px #ff6a0040;
+  pointer-events: none;
+  animation: phoneGlow 2.6s infinite alternate;
+}
+@keyframes phoneGlow {
+  to { box-shadow: 0 0 60px 18px #2f80ed99, 0 0 28px 10px #ff6a0080; }
+}
+@media (max-width: 800px) {
+  .mobile-optimized-content { flex-direction: column; gap: 24px;}
+  .mobile-mockup { margin: 0 auto; }
+}
+ <!-- Item 1: Ilustración animada interactiva -->
+    <div class="immersive-item immersive-draw">
+      <span>🖌️ Dibuja aquí</span>
+      <canvas id="draw-canvas" width="180" height="140"></canvas>
+    </div>
+
+    <!-- Item 2: Cambio de tema en vivo -->
+    <div class="immersive-item immersive-theme">
+      <span>🌗 Cambia el tema</span>
+      <button id="theme-btn" class="btn-secondary">Modo Oscuro</button>
+    </div>
+
+    <!-- Item 3: Hover Reveal -->
+    <div class="immersive-item immersive-reveal">
+      <span>Pasa el mouse:</span>
+      <div class="reveal-box">¿Qué hay aquí?</div>
+    </div>
+
+    <!-- Item 4: Botón vibrante con partícula -->
+    <div class="immersive-item immersive-particles">
+      <span>✨ Toque mágico</span>
+      <button id="particles-btn" class="btn-primary">Haz clic</button>
+      <div id="particles-container"></div>
+    </div>
+
+    <!-- Item 5: Flip Card de testimonio -->
+    <div class="immersive-item immersive-flip">
+      <div class="flip-card">
+        <div class="flip-card-inner">
+          <div class="flip-card-front">
+            <span>🗣️ Opinión</span>
+            <p>Haz clic para girar</p>
+          </div>
+          <div class="flip-card-back">
+            <p><i>“¡La web de mi negocio ahora es otra cosa! Increíble experiencia móvil.”</i></p>
+            <strong>- Cliente feliz</strong>
+          </div>
+        </div>
+      </div>
+    </div>
+    
