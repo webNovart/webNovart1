@@ -72,3 +72,75 @@ if(heroImg) {
         heroImg.style.transform = '';
     });
 }
+// Dibujo en canvas
+const canvas = document.getElementById('draw-canvas');
+if (canvas) {
+  const ctx = canvas.getContext('2d');
+  let drawing = false;
+  canvas.addEventListener('mousedown', e => { drawing = true; ctx.beginPath(); });
+  canvas.addEventListener('mouseup', e => { drawing = false; });
+  canvas.addEventListener('mouseout', e => { drawing = false; });
+  canvas.addEventListener('mousemove', function(e) {
+    if (!drawing) return;
+    const rect = canvas.getBoundingClientRect();
+    ctx.lineWidth = 2.5;
+    ctx.lineCap = 'round';
+    ctx.strokeStyle = '#2f80ed';
+    ctx.lineTo(e.clientX - rect.left, e.clientY - rect.top);
+    ctx.stroke();
+    ctx.beginPath();
+    ctx.moveTo(e.clientX - rect.left, e.clientY - rect.top);
+  });
+}
+
+// Cambio de tema
+const themeBtn = document.getElementById('theme-btn');
+if (themeBtn) {
+  themeBtn.addEventListener('click', () => {
+    document.body.classList.toggle('dark-mode');
+    themeBtn.textContent = document.body.classList.contains('dark-mode') ? 'Modo Claro' : 'Modo Oscuro';
+  });
+}
+
+// Efecto partículas en botón
+const particlesBtn = document.getElementById('particles-btn');
+const particlesContainer = document.getElementById('particles-container');
+if (particlesBtn && particlesContainer) {
+  particlesBtn.addEventListener('click', () => {
+    for (let i = 0; i < 15; i++) {
+      const p = document.createElement('div');
+      p.className = 'particle';
+      p.style.position = 'absolute';
+      p.style.left = '45px';
+      p.style.top = '25px';
+      p.style.width = '9px';
+      p.style.height = '9px';
+      p.style.borderRadius = '50%';
+      p.style.background = `linear-gradient(90deg, #ff6a00, #2f80ed)`;
+      p.style.opacity = Math.random() * 0.8 + 0.2;
+      p.style.transform = `translate(-50%, -50%)`;
+      particlesContainer.appendChild(p);
+      const angle = Math.random() * Math.PI * 2;
+      const radius = Math.random() * 35 + 18;
+      setTimeout(() => {
+        p.style.transition = 'all .8s cubic-bezier(.7,.2,.4,1)';
+        p.style.transform = `translate(${Math.cos(angle)*radius}px, ${Math.sin(angle)*radius}px) scale(0.5)`;
+        p.style.opacity = 0;
+      }, 10);
+      setTimeout(() => particlesContainer.removeChild(p), 900);
+    }
+  });
+}
+
+// Flip Card
+const flipCard = document.querySelector('.flip-card');
+if (flipCard) {
+  flipCard.addEventListener('click', () => {
+    flipCard.classList.toggle('flipped');
+  });
+}
+
+// Dark mode body (opcional para tema)
+if (document.body.classList.contains('dark-mode')) {
+  document.body.style.background = "#23272f";
+}
