@@ -98,7 +98,11 @@ const themeBtn = document.getElementById('theme-btn');
 if (themeBtn) {
   themeBtn.addEventListener('click', () => {
     document.body.classList.toggle('dark-mode');
-    themeBtn.textContent = document.body.classList.contains('dark-mode') ? 'Modo Claro' : 'Modo Oscuro';
+    if (document.body.classList.contains('dark-mode')) {
+      themeBtn.textContent = 'Modo Claro';
+    } else {
+      themeBtn.textContent = 'Modo Oscuro';
+    }
   });
 }
 
@@ -143,4 +147,13 @@ if (flipCard) {
 // Dark mode body (opcional para tema)
 if (document.body.classList.contains('dark-mode')) {
   document.body.style.background = "#23272f";
+}
+const revealBox = document.getElementById('revealBox');
+if (revealBox) {
+  revealBox.addEventListener('mouseenter', () => {
+    revealBox.textContent = '¡Sorpresa! 😃';
+  });
+  revealBox.addEventListener('mouseleave', () => {
+    revealBox.textContent = '¿Qué hay aquí?';
+  });
 }
