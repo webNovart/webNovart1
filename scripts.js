@@ -150,10 +150,12 @@ if (document.body.classList.contains('dark-mode')) {
 }
 const revealBox = document.getElementById('revealBox');
 if (revealBox) {
-  revealBox.addEventListener('mouseenter', () => {
+  revealBox.addEventListener('mouseenter', function() {
     revealBox.textContent = '¡Sorpresa! 😃';
+    revealBox.classList.add('active');
   });
-  revealBox.addEventListener('mouseleave', () => {
+  revealBox.addEventListener('mouseleave', function() {
     revealBox.textContent = '¿Qué hay aquí?';
+    revealBox.classList.remove('active');
   });
 }
