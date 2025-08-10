@@ -1113,3 +1113,9 @@ body.dark-mode .btn-primary,
 body.dark-mode .btn-secondary {
   filter: brightness(1.1);
 }
+/* Oculta la simulación móvil en celulares */
+@media (max-width: 767px) {
+  .mobile-optimized {
+    display: none !important;
+  }
+}
