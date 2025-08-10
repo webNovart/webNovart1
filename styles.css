@@ -174,7 +174,7 @@ section {
   transition: transform .22s, box-shadow .22s, background 0.2s;
 }
 .service-card img, .graphic-card img, .portfolio-item img, .immersive-item img {
-  width: 58px;
+  width: 100px;
   margin-bottom: 18px;
 }
 .service-card h3, .graphic-card h3, .portfolio-item h3, .plan-card h2, .immersive-item span {
