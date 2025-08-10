@@ -167,14 +167,14 @@ section {
   background: linear-gradient(120deg, #f9f9fa 70%, #e7f0ff 100%);
   border-radius: 22px;
   box-shadow: 0 2px 16px #ff6a0022;
-  min-width: 280px;
-  max-width: 310px;
+  min-width: 230px;
+  max-width: 270px;
   padding: 28px 20px;
   text-align: center;
   transition: transform .22s, box-shadow .22s, background 0.2s;
 }
 .service-card img, .graphic-card img, .portfolio-item img, .immersive-item img {
-  width: 100px;
+  width: 160px;
   margin-bottom: 18px;
 }
 .service-card h3, .graphic-card h3, .portfolio-item h3, .plan-card h2, .immersive-item span {
