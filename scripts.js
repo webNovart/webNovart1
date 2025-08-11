@@ -255,8 +255,8 @@ document.addEventListener('DOMContentLoaded', function() {
 
 
 document.addEventListener("DOMContentLoaded", function() {
-  // Solo ejecuta en index.html (opcional, si tienes varios HTML)
-  if (window.location.pathname.endsWith("index.html") || window.location.pathname === "/" || window.location.pathname === "/index.html") {
+  // Solo ejecuta en la ventana principal, no en iframes
+  if (window.top === window.self) {
     var seccion = document.getElementById('nivel-negocio');
     if(seccion) {
       seccion.scrollIntoView({behavior: "smooth"});
