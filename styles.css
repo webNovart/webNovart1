@@ -28,10 +28,10 @@ header.header {
 .logo-container {
   text-align: center;
   padding: 32px 0 8px 0;
-  width: 260px;
+  
 }
 .logo-main {
-  width: 160px;
+  width: 300px;
   filter: drop-shadow(0 2px 14px #0001);
 }
 .lema {
