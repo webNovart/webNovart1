@@ -356,9 +356,9 @@ footer {
   right: 20px;
 }
 .bubble img {
-  width: 26px;
+  width: 46px;
 }
-.bubble-wsp { bottom: 25px; }
+.bubble-wsp { bottom: 35px; }
 /* .bubble-ig { bottom: 80px; } */
 .bubble-mail { bottom: 80px; }
 .bubble:hover {
