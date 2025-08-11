@@ -233,3 +233,22 @@ document.addEventListener('DOMContentLoaded', function() {
         });
     });
 });
+
+document.addEventListener('DOMContentLoaded', function() {
+    const form = document.getElementById('contactForm');
+    form.addEventListener('submit', function(e) {
+        e.preventDefault();
+        const data = new FormData(form);
+        fetch(form.action, {
+            method: form.method,
+            body: data,
+            headers: { 'Accept': 'application/json' }
+        }).then(response => {
+            if (response.ok) {
+                form.innerHTML = "<p style='color:green;'>¡Gracias por tu mensaje! Pronto te contactaremos.</p>";
+            } else {
+                form.innerHTML = "<p style='color:red;'>Ocurrió un error. Intenta de nuevo o usa WhatsApp/Correo.</p>";
+            }
+        });
+    });
+});
