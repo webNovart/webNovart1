@@ -356,15 +356,14 @@ footer {
   right: 20px;
 }
 .bubble img {
-  width: 46px !important;
+  width: 46px;
+  height: 46px;
+  object-fit: contain; /* asegura que la imagen no salga de la burbuja */
+  margin: 0; padding: 0;
+  display: block;
 }
-.bubble-wsp { bottom: 35px; }
-/* .bubble-ig { bottom: 80px; } */
-.bubble-mail { bottom: 87px; }
-.bubble:hover {
-  transform: scale(1.13) rotate(-8deg);
-  box-shadow: 0 6px 24px #2f80ed55;
-}
+.bubble-wsp  { bottom: 35px; }
+.bubble-mail { bottom: 81px; }
 
 /* ==== RESPONSIVE ==== */
 @media (max-width: 1100px) {
