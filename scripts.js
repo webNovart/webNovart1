@@ -215,3 +215,21 @@ if (revealBox) {
     revealBox.classList.remove('active');
   });
 }
+
+
+document.addEventListener('DOMContentLoaded', function() {
+    const wspNumber = "3113200214"; // Tu número sin signos ni espacios
+    document.querySelectorAll('.btn-wsp-plan').forEach(btn => {
+        btn.addEventListener('click', function() {
+            const plan = btn.getAttribute('data-plan');
+            const precio = btn.getAttribute('data-precio');
+            const obs = prompt(`¿Deseas agregar alguna observación para tu plan "${plan}"? (opcional)`);
+            let mensaje = `Hola, estoy interesado en el plan *${plan}* de webNovart (%0Aprecio: ${precio}).`;
+            if(obs && obs.trim() !== "") {
+                mensaje += `%0AObservaciones: ${encodeURIComponent(obs)}`;
+            }
+            const wspUrl = `https://wa.me/${wspNumber}?text=${mensaje}`;
+            window.open(wspUrl, '_blank');
+        });
+    });
+});
