@@ -28,6 +28,7 @@ header.header {
 .logo-container {
   text-align: center;
   padding: 32px 0 8px 0;
+  width: 260px;
 }
 .logo-main {
   width: 160px;
@@ -127,7 +128,7 @@ nav li a:hover {
 }
 .hero-img img,
 .animated-graphic {
-  width: 250px;
+  width: 290px;
   max-width: 90vw;
   filter: drop-shadow(0 8px 30px #2f80ed22);
   animation: float 3.5s ease-in-out infinite;
