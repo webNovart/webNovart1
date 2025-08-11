@@ -356,11 +356,11 @@ footer {
   right: 20px;
 }
 .bubble img {
-  width: 46px;
+  width: 60px !important;
 }
 .bubble-wsp { bottom: 35px; }
 /* .bubble-ig { bottom: 80px; } */
-.bubble-mail { bottom: 80px; }
+.bubble-mail { bottom: 87px; }
 .bubble:hover {
   transform: scale(1.13) rotate(-8deg);
   box-shadow: 0 6px 24px #2f80ed55;
