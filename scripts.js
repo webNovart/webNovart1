@@ -263,3 +263,21 @@ document.addEventListener("DOMContentLoaded", function() {
     }
   }
 });
+
+// Botón "Ir arriba"
+const scrollTopBtn = document.createElement('button');
+scrollTopBtn.id = 'scrollTopBtn';
+scrollTopBtn.title = 'Ir arriba';
+scrollTopBtn.innerText = '↑';
+document.body.appendChild(scrollTopBtn);
+
+window.addEventListener('scroll', function() {
+  if (window.scrollY > 200) {
+    scrollTopBtn.style.display = 'block';
+  } else {
+    scrollTopBtn.style.display = 'none';
+  }
+});
+scrollTopBtn.addEventListener('click', function() {
+  window.scrollTo({ top: 0, behavior: 'smooth' });
+});
