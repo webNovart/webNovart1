@@ -281,3 +281,73 @@ window.addEventListener('scroll', function() {
 scrollTopBtn.addEventListener('click', function() {
   window.scrollTo({ top: 0, behavior: 'smooth' });
 });
+
+document.addEventListener("DOMContentLoaded", function() {
+  // Solo ejecuta en la ventana principal, no en iframes
+  if (window.top === window.self) {
+    var destino = document.getElementById('contactForm');
+    if(destino) {
+      destino.scrollIntoView({behavior: "smooth"});
+    }
+  }
+});
+
+document.addEventListener("DOMContentLoaded", function() {
+  // Solo ejecuta en la ventana principal, no en iframes
+  if (window.top === window.self) {
+    var destino = document.getElementById('contactenosId');
+    if(destino) {
+      destino.scrollIntoView({behavior: "smooth"});
+    }
+  }
+});
+
+document.addEventListener("DOMContentLoaded", function() {
+  // Solo ejecuta en la ventana principal, no en iframes
+  if (window.top === window.self) {
+    var destino = document.getElementById('preguntas');
+    if(destino) {
+      destino.scrollIntoView({behavior: "smooth"});
+    }
+  }
+});
+
+document.addEventListener("DOMContentLoaded", function() {
+  // Solo ejecuta en la ventana principal, no en iframes
+  if (window.top === window.self) {
+    var destino = document.getElementById('sobre');
+    if(destino) {
+      destino.scrollIntoView({behavior: "smooth"});
+    }
+  }
+});
+
+document.addEventListener("DOMContentLoaded", function() {
+  // Solo ejecuta en la ventana principal, no en iframes
+  if (window.top === window.self) {
+    var destino = document.getElementById('planes');
+    if(destino) {
+      destino.scrollIntoView({behavior: "smooth"});
+    }
+  }
+});
+
+document.addEventListener("DOMContentLoaded", function() {
+  // Solo ejecuta en la ventana principal, no en iframes
+  if (window.top === window.self) {
+    var destino = document.getElementById('portafolio');
+    if(destino) {
+      destino.scrollIntoView({behavior: "smooth"});
+    }
+  }
+});
+
+document.addEventListener("DOMContentLoaded", function() {
+  // Solo ejecuta en la ventana principal, no en iframes
+  if (window.top === window.self) {
+    var destino = document.getElementById('terminos');
+    if(destino) {
+      destino.scrollIntoView({behavior: "smooth"});
+    }
+  }
+});
